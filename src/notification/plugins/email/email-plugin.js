@@ -8,12 +8,17 @@ class EmailNotificationPlugin extends AbstractNotificationPlugin {
   constructor() {
     super();
     this.notificationType = EmailNotificationConstants.NOTIFICATION_TYPE;
+    this.jobName = EmailNotificationConstants.JOB_NAME;
     this.notificationDispatcher = new EmailDispatcher();
     this.notificationRequestHandler = new EmailRequestHandler();
   }
 
   getNotificationType() {
     return this.notificationType;
+  }
+
+  getJobName() {
+    return this.jobName;
   }
 
   getNotificationDispatcher() {

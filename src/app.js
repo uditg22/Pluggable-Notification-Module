@@ -7,6 +7,11 @@ var app = express();
 import bodyParser from 'body-parser';
 
 import notificationsRouter from './routes/notifications';
+import jobQueueSingleton from './util/job-queues/job-queue-singleton';
+import NotificationPluginsRegistry from './notification/notification-plugins.registry';
+
+NotificationPluginsRegistry.initialize();
+jobQueueSingleton.start();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

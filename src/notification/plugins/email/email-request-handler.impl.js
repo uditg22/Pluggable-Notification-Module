@@ -1,5 +1,7 @@
 'use strict'
 import AbstractNotificationRequestHandler from '../../interfaces/notification-request-handler.interface';
+import jobQueueSingleton from '../../../util/job-queues/job-queue-singleton';
+import EmailConstants from './email-notification.constants';
 
 class EmailRequestHandler extends AbstractNotificationRequestHandler {
   constructor () {
@@ -7,11 +9,13 @@ class EmailRequestHandler extends AbstractNotificationRequestHandler {
   }
 
   handleNotificationRequest(notificationReqObj) {
-    console.log('Creating a new Job in the Notification queue of type Email');
     return new Promise(function(resolve, reject) {
-      setTimeout(function() {
-        resolve();
-      }, 100);
+      jobQueueSingleton.onReady(function() {
+        jobQueueSingleton.addNewJob(EmailConstants.JOB_NAME, {notification: notificationReqObj}, function() {
+          console.log('Created a new Job in the job queue of type Email Notification');
+          resolve();
+        });
+      });
     });
   }
 }

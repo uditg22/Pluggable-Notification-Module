@@ -4,6 +4,9 @@ class AbstractNotificationPlugin {
     if (this.getNotificationType === undefined) {
       throw new TypeError("Must override method getNotificationType");
     }
+    if(this.getJobName === undefined) {
+      throw new TypeError("Must override method getJobName");
+    }
     if (this.getNotificationDispatcher === undefined) {
       throw new TypeError("Must override method getNotificationDispatcher");
     }

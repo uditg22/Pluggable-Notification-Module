@@ -2,8 +2,6 @@
 
 class NotificationMiddleware {
   validateRequest(req, res, next) {
-    console.log('Request body ' + JSON.stringify(req.body));
-
     if(!req.body.subject || !req.body.from || !req.body.to || !req.body.message) {
       return next(new Error('Invalid Notification Request'));
     }

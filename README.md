@@ -2,7 +2,8 @@
 
 ## Description
 This is an plug and play Notification Api module that can be used in your project to trigger notifications to your users
-across multiple channels including Mail, Slack, Push Notification with just a single api call
+across multiple channels including Mail, Slack, Push Notification with just a single api call. You can easily add a new
+notification channel by creating a plugin for that and registering it with the Plugins registry.
 
 ## Prerequisites
 ### MongoDb Installation with min. version 3.4.x

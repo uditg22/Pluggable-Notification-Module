@@ -6,14 +6,14 @@ across multiple channels including Mail, Slack, Push Notification with just a si
 notification channel by creating a plugin for that and registering it with the Plugins registry.
 
 ## Prerequisites
-### MongoDb Installation with min. version 3.4.x
-### Node with min. version 6.11.x
+* MongoDb Installation with min. version 3.4.x
+* Node with min. version 6.11.x
 
 ## Setup
-### Create a .env file in your root folder. Check the .env.sample file for all the variables that need to be set
-### Run mongo daemon using mongod command
-### npm install
+* Create a .env file in your root folder. Check the .env.sample file for all the variables that need to be set
+* Run mongo daemon using mongod command
+* npm install
 
 ## Build
-./node_modules/.bin/babel ./src --experimental --source-maps-inline -d ./dist
-node ./dist/index
+* ./node_modules/.bin/babel ./src --experimental --source-maps-inline -d ./dist
+* node ./dist/index
